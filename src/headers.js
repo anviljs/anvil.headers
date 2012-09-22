@@ -12,9 +12,12 @@ module.exports = function( _, anvil ) {
 		},
 
 		configure: function( config, command, done ) {
-			var self = this;
+			var self = this,
+				outputPlugin = anvil.plugins[ "anvil.output" ];
 			this.headerFileName = command.header || "header";
-			anvil.plugins[ "anvil.output" ].dependencies.push( "anvil.headers" );
+			if( outputPlugin ) {
+				outputPlugin.dependencies.push( "anvil.headers" );
+			}
 			_.each( self.getHeaders( anvil.project.files ), function( file ) {
 				file.noCopy = true;
 				self.headers[ file.extension() ] = file;
@@ -90,6 +93,5 @@ module.exports = function( _, anvil ) {
 				}, function() { done(); } );
 			}
 		}
-
 	} );
 };
