@@ -2,7 +2,7 @@ var minimatch = require( "minimatch" ),
 	path = require( "path" );
 
 module.exports = function( _, anvil ) {
-	return anvil.plugin( {
+	anvil.plugin( {
 		name: "anvil.headers",
 		activities: [ "identify", "push" ],
 		dependencies: [ "fileLoader" ],
@@ -13,7 +13,7 @@ module.exports = function( _, anvil ) {
 
 		configure: function( config, command, done ) {
 			var self = this,
-				outputPlugin = anvil.plugins[ "anvil.output" ];
+				outputPlugin = anvil.extensions.plugins[ "anvil.output" ];
 			if( outputPlugin ) {
 				outputPlugin.dependencies.push( "anvil.headers" );
 			}
