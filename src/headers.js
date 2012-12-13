@@ -145,8 +145,12 @@ module.exports = function( _, anvil ) {
 						done( headerContent + "\n" + content );
 					};
 					anvil.scheduler.parallel( header.files, function( file, done ) {
-						var target = [ file.workingPath, file.name ];
-						anvil.fs.transform( target, prepend, target, done );
+						if( file.state !== "done" ) {
+							var target = [ file.workingPath, file.name ];
+							anvil.fs.transform( target, prepend, target, done );
+						} else {
+							done();
+						}
 					}, done );
 				} );
 				}, function() { done(); }
