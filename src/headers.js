@@ -1,5 +1,4 @@
-var minimatch = require( "minimatch" ),
-	path = require( "path" );
+var path = require( "path" );
 
 module.exports = function( _, anvil ) {
 	anvil.plugin( {
@@ -63,7 +62,7 @@ module.exports = function( _, anvil ) {
 				}
 			} );
 			_.each( this.config.headers, function( header, pattern ) {
-				var matches = minimatch.match( list, pattern, {} ),
+				var matches = anvil.fs.match( list, pattern, {} ),
 					headerDepth = header.relativePath.split( /\\|\//g ).length,
 					patternFile = path.basename( pattern );
 				_.each( matches, function( fileKey ) {

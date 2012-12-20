@@ -1,6 +1,6 @@
-## Anvil Headers Plugin
+## Anvil Headers Extension
 
-This plugin enables tokenized header files to get prepended after minimization steps (and also saves you from having to type the same copyright crap at the top of each file).
+Enables tokenized header files to get prepended after minimization steps (and also saves you from having to type the same copyright crap at the top of each file).
 
 ## Installation
 
@@ -9,7 +9,7 @@ anvil will install this plugin during post-install.
 ## Conventions
 
 ### File Name
-This plugin assume that your header files will be named header and that the extension of the header file will control which kinds of files the header applies to.
+Assumes that your header files will be named header and that the extension of the header file will control which kinds of files the header applies to.
 
 ### Top Level Headers
 By convention, a header file at the very top of your repository will get applied to all files in your source tree that have a matching extension.

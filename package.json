@@ -1,8 +1,8 @@
 {
   "author": "Alex Robson <alex@sharplearningcurve.com> (http://sharplearningcurve.com)",
   "name": "anvil.headers",
-  "description": "An anvil core plugin that writes headers to output files",
-  "version": "0.1.1",
+  "description": "A core anvil component that writes headers to output files",
+  "version": "0.1.2",
   "repository": {
     "type": "git",
     "url": "git://github.com/arobson/anvil.headers.git"
@@ -11,9 +11,6 @@
     "node": "~0.8.3"
   },
   "main": "./lib/headers.js",
-  "dependencies": {
-    "minimatch": "~0.2.9"
-  },
   "devDependencies": { 
     "anvil.js": ">=0.8.5",
     "should": "~1.1"
